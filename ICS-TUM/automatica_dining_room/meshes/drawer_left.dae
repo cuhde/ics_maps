@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.79.0 commit date:2018-03-22, commit time:14:10, hash:f4dc9f9d68b</authoring_tool>
+    </contributor>
+    <created>2019-07-05T14:38:58</created>
+    <modified>2019-07-05T14:38:58</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_effects>
+    <effect id="wood_brown-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.7466667 0.6117647 0.505098 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">49</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="wood_brown-material" name="wood_brown">
+      <instance_effect url="#wood_brown-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Scene_013-mesh" name="Scene.013">
+      <mesh>
+        <source id="Scene_013-mesh-positions">
+          <float_array id="Scene_013-mesh-positions-array" count="24">29.49999 0.9999998 -7.249999 -29.49997 1 -7.249999 -29.49999 -0.9999997 -7.249999 29.49999 -0.9999999 -7.249999 29.5 0.9999994 7.249999 29.49997 -1 7.249999 -29.5 -0.9999995 7.249999 -29.49998 0.9999999 7.249999</float_array>
+          <technique_common>
+            <accessor source="#Scene_013-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Scene_013-mesh-normals">
+          <float_array id="Scene_013-mesh-normals-array" count="69">0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 1 0 0 1 0 0 1 0 0 1 1 -1.4692e-6 1.13176e-6 1 -1.53681e-5 -6.05598e-7 1 0 1.31541e-6 1 -1.68373e-5 -7.89248e-7 0 -1 0 0 -1 0 0 -1 0 0 -1 0 -1 8.41864e-6 -6.57706e-7 -1 8.41865e-6 -6.57707e-7 -1 8.41864e-6 -6.57706e-7 0 1 0 0 1 0 0 1 0 0 1 0</float_array>
+          <technique_common>
+            <accessor source="#Scene_013-mesh-normals-array" count="23" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Scene_013-mesh-map-0">
+          <float_array id="Scene_013-mesh-map-0-array" count="72">0.9961538 0.5706112 0.00390625 0.5369758 0.003906488 0.5706112 0.9961538 0.5706112 0.9961538 0.5369758 0.00390625 0.5369758 0.00390625 0.03754174 0.996154 0.00390625 0.00390625 0.00390625 0.00390625 0.03754174 0.9961543 0.03754174 0.996154 0.00390625 0.00390625 0.6456949 0.2477638 0.6120593 0.00390625 0.6120593 0.00390625 0.6456949 0.2477638 0.6456949 0.2477638 0.6120593 0.00390625 0.2892119 0.996154 0.5330695 0.9961539 0.2892119 0.00390625 0.2892119 0.003906488 0.5330695 0.996154 0.5330695 0.2477639 0.5745175 0.00390625 0.6081531 0.2477637 0.6081531 0.2477639 0.5745175 0.00390625 0.5745176 0.00390625 0.6081531 0.9961543 0.2853056 0.003906369 0.04144817 0.00390625 0.2853056 0.9961543 0.2853056 0.996154 0.04144799 0.003906369 0.04144817</float_array>
+          <technique_common>
+            <accessor source="#Scene_013-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Scene_013-mesh-vertices">
+          <input semantic="POSITION" source="#Scene_013-mesh-positions"/>
+        </vertices>
+        <triangles material="wood_brown-material" count="12">
+          <input semantic="VERTEX" source="#Scene_013-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Scene_013-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Scene_013-mesh-map-0" offset="2" set="0"/>
+          <p>0 0 0 2 1 1 1 2 2 0 0 3 3 3 4 2 1 5 4 4 6 6 5 7 5 6 8 4 4 9 7 7 10 6 5 11 0 8 12 5 9 13 3 10 14 0 8 15 4 11 16 5 9 17 3 12 18 6 13 19 2 14 20 3 12 21 5 15 22 6 13 23 2 16 24 7 17 25 1 18 26 2 16 27 6 17 28 7 17 29 4 19 30 1 20 31 7 21 32 4 19 33 0 22 34 1 20 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Environment" name="Environment" type="NODE">
+        <matrix sid="transform">0.01 0 0 0 0 -1.62921e-9 -0.01 0 0 0.01 -1.62921e-9 0 0 0 0 1</matrix>
+        <node id="drawer_left" name="drawer_left" type="NODE">
+          <matrix sid="transform">0.999999 0 0 0 0 0.999999 1.42109e-14 0 0 -1.42109e-14 0.999999 0 0 0 0 1</matrix>
+          <instance_geometry url="#Scene_013-mesh" name="drawer_left">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wood_brown-material" target="#wood_brown-material"/>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.79.0 commit date:2018-03-22, commit time:14:10, hash:f4dc9f9d68b</authoring_tool>
+    </contributor>
+    <created>2019-07-05T14:38:58</created>
+    <modified>2019-07-05T14:38:58</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_effects>
+    <effect id="glass_milky-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.5886793 0.5886793 0.5886793 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">49</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="glass_milky-material" name="glass_milky">
+      <instance_effect url="#glass_milky-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Scene-mesh" name="Scene">
+      <mesh>
+        <source id="Scene-mesh-positions">
+          <float_array id="Scene-mesh-positions-array" count="24">0.2543838 -0.331348 0.9564297 0.2543838 -0.3187402 0.9564297 0.2543838 -0.3187403 0.0707094 0.2543838 -0.3313481 0.0707094 -0.2543838 -0.3313481 0.0707094 -0.2543838 -0.3187403 0.0707094 -0.2543838 -0.3187402 0.9564297 -0.2543838 -0.331348 0.9564297</float_array>
+          <technique_common>
+            <accessor source="#Scene-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Scene-mesh-normals">
+          <float_array id="Scene-mesh-normals-array" count="18">1 0 0 -1 0 0 0 0 1 0 1 -1.32271e-7 0 0 -1 0 -1 1.32271e-7</float_array>
+          <technique_common>
+            <accessor source="#Scene-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Scene-mesh-vertices">
+          <input semantic="POSITION" source="#Scene-mesh-positions"/>
+        </vertices>
+        <triangles material="glass_milky-material" count="12">
+          <input semantic="VERTEX" source="#Scene-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Scene-mesh-normals" offset="1"/>
+          <p>0 0 2 0 1 0 0 0 3 0 2 0 4 1 6 1 5 1 4 1 7 1 6 1 6 2 0 2 1 2 6 2 7 2 0 2 5 3 1 3 2 3 5 3 6 3 1 3 5 4 3 4 4 4 5 4 2 4 3 4 4 5 0 5 7 5 4 5 3 5 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Environment" name="Environment" type="NODE">
+        <matrix sid="transform">0.01 0 0 0 0 -1.62921e-9 -0.01 0 0 0.01 -1.62921e-9 0 0 0 0 1</matrix>
+        <node id="movable_doorl_left_cupboard" name="movable_doorl_left_cupboard" type="NODE">
+          <matrix sid="transform">0.999999 0 0 0 0 0.999999 1.42109e-14 0 0 -1.42109e-14 0.999999 0 0 0 0 1</matrix>
+          <node id="cupboard_door_glass" name="cupboard_door_glass" type="NODE">
+            <matrix sid="transform">-100.0001 -8.73923e-6 8.74533e-6 0 8.74229e-6 0.03490012 100 0 -8.74229e-6 100 -0.03490012 0 0 0 0 1</matrix>
+            <instance_geometry url="#Scene-mesh" name="cupboard_door_glass">
+              <bind_material>
+                <technique_common>
+                  <instance_material symbol="glass_milky-material" target="#glass_milky-material"/>
+                </technique_common>
+              </bind_material>
+            </instance_geometry>
+          </node>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
